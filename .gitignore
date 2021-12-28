@@ -1,0 +1,9 @@
+.next
+.vscode
+node_modules
+.env
+.DS_Store
+.vercel
+server.js
+certificates
+yarn-error.log
