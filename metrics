@@ -1,0 +1,15 @@
+Individual metrics
+Workflows assigned QTD
+Workflows active last 30 days
+
+Team metrics
+$ Negotiated ACV : $ Legal FTE
+$ Negotiated ACV : # Legal FTE (as opposed to a ratio to people)
+# Workflows : # Legal FTE
+$ Negotiated ACV : # Workflows (to see whether deal sizes are changing)
+
+Deal specific metrics
+Drafts per closed workflow
+Significant drafts per workflow (proxy from uploaded drafts)
+Median days between drafts in a workflow
+Time between first and last draft of workflow
