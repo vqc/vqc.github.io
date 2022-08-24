@@ -8,3 +8,8 @@ server.js
 certificates
 yarn-error.log
 /drafts
+/generated
+/package-lock.json
+/package.json
+gulpfile.js
+template.html
