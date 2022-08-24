@@ -7,3 +7,4 @@ node_modules
 server.js
 certificates
 yarn-error.log
+/drafts
