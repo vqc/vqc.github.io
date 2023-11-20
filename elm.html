@@ -31,86 +31,192 @@
         </style>
     </head>
     <body>
-      
-      <h1>Metrics for Sales-side Commercial Contracting Teams</h1>
-      <p>A look into metrics that are useful for commercial contracting teams that support enterprise sales teams.</p>
-      <p>Collectively, these metrics are useful for finding opportunities to improve internal processes, ensuring a sane work environment for your team members, and providing context and support for increasing team resources.</p>
-      <p>The metrics are:</p>
-      <ul>
-      <li>Individual Metrics
-      <ul>
-      <li>Workflows Assigned QTD Per Person</li>
-      <li>Workflows Active Last 30 Days Per Person</li>
-      <li>Time Off Over Rolling 6-Month Period Per Person</li>
-      </ul>
-      </li>
-      <li>Team Metrics
-      <ul>
-      <li>Ratio $ Negotiated ACV : $ Legal FTE</li>
-      <li>Ratio $ Negotiated ACV : # Legal FTE</li>
-      <li>Ratio # Workflows : # Legal FTE</li>
-      <li>Ratio $ Negotiated ACV : # Workflow</li>
-      </ul>
-      </li>
-      <li>Deal Metrics
-      <ul>
-      <li>Drafts Per Workflow</li>
-      <li>Significant Drafts Per Workflow</li>
-      <li>Median Days Between Drafts Per Workflow</li>
-      <li>Time Between First and Last Negotiated Draft Per Workflow</li>
-      <li>Time Per Deal Attributed to Legal, Business, or Counterparty</li>
-      </ul>
-      </li>
-      </ul>
-      <p>Actually getting the data and setting up the systems for measuring these metrics is surprisingly difficult. Things like deal size, headcount costs, and number of drafts per deal tend to live on separate systems owned by separate teams. And, in personal experience, pulling everything together ends up requiring a good amount of custom code and wrangling spreadsheets.</p>
-      <p>Good benchmarking doesn’t seem to exist either. One reason may simply be the difficulty of actually getting the numbers. Another may be the specifics of each business. Things like average deal size, market segment, and buyer profile might all impact these metrics, which could make it difficult to compare across companies.</p>
-      <p>Metrics get gamed. A few of the metrics here work together to disincentivize (or try to disincentivize) gaming. For instance, reducing the number of drafts that are generated per workflow might incentivize team members to hold onto drafts and not upload them into the workflow management system. The median days between drafts metric would hopefully counteract this by incentivizing the reduction of time between drafts.</p>
-      <p>Moreover, it is useful to identify floors and ceilings to these metrics, beyond which it may be unreasonable or un-useful to find additional improvement. At that point in the team lifecycle, it might be time to find different metrics.</p>
-      <p>Ultimately, the  goal here is to find ways to improve the system, not to micromanage.</p>
-      <h2>Individual Metrics</h2>
-      <p>The goal of this set of metrics is to get an overall sense of work distribution among the team and permit for proactive allocation / reallocation of work.</p>
-      <p>The inclusion of the “days off” metric is to ensure that team members are getting the breaks they deserve. It is a very common phenomena for lawyers, especially US-based lawyers, to take too little time off. This leads to burnout. Burnout is bad for humans. And burned out humans are bad for teams.</p>
-      <p>The metrics here don’t account for how complex each workflow is.</p>
-      <h3>Workflows Assigned QTD Per Person</h3>
-      <p>WIP</p>
-      <p>Goal here is to get visibility into how new deals are getting assigned.</p>
-      <h3>Workflows Active Last 30 Days Per Person</h3>
-      <p>WIP</p>
-      <p>Goal here is to get visibility into</p>
-      <h3>Time Off Over Rolling 6-Month Period Per Person</h3>
-      <p>WIP</p>
-      <p>The goal here is to ensure that people are taking enough time off for themselves.</p>
-      <h2>Team Metrics</h2>
-      <h3>Ratio $ Negotiated ACV : $ Legal FTE</h3>
-      <p>WIP</p>
-      <h3>Ratio $ Negotiated ACV : # Legal FTE</h3>
-      <p>WIP</p>
-      <p>Early on might rely on a # Sales FTE : # Legal FTE instead of a $ ratio. But over time.</p>
-      <h3>Ratio # Workflows : # Legal FTE</h3>
-      <p>WIP</p>
-      <h3>Ratio $ Negotiated ACV : # Workflow</h3>
-      <p>WIP</p>
-      <p>(to see whether deal sizes are changing)</p>
-      <h2>Deal Metrics</h2>
-      <p>A focus for these metrics is on the parts of the deal process that can be influenced by the legal team.</p>
-      <p>For instance, it may not be too useful, from the legal team's perspective, to consider the time it takes to go from workflow launch to a signed deal. Very often the signature process is something that is influenced by the sales team and the counterparty, and it can be the case that the legal team has completed the final version of the document, and signature will take another two weeks because of a process issue on the counterparty side.</p>
-      <h3>Drafts Per Workflow</h3>
-      <p>WIP</p>
-      <p>How many drafts does it take to get to a signable version of the agreement? The theoretical minimum is 1 draft, e.g. the buyer signs the first draft provided by the seller. In practice, this is impossible as</p>
-      <p>This number should generally trend down over time.</p>
-      <p>Drive this number down by ensuring that the first draft is commercially accurate.</p>
-      <p>Automate the inclusion of commonly needed terms.</p>
-      <h3>Significant Drafts Per Workflow</h3>
-      <p>WIP</p>
-      <h3>Median Days Between Drafts Per Workflow</h3>
-      <p>WIP</p>
-      <h3>Time Between First and Last Negotiated Draft Per Workflow</h3>
-      <p>WIP</p>
-      <h3>Time Per Deal Attributed to Legal, Business, or Counterparty Per Workflow</h3>
-      <p>WIP</p>
-      
 
 
+
+<h1 id="metrics-for-sales-side-commercial-contracting-teams">Metrics for Sales-side Commercial Contracting Teams</h1>
+<p><em>[Ed note: Please send any comments, thoughts, improvements to vince @ this domain. I expect and hope that this work will change over time. Thank you to Anne, Wendy, Hai-Ching, Justine, Christoffer, Rooz, Debarshi, Pearlita, Rodney, Pam, Nelly, Olly, Chris, Sandra, Lizzie, Joy, and Josh for giving me an opportunity to develop these metrics through your hard work and support.]</em></p>
+<p>A look into some metrics that are useful for commercial contracting teams that support sales teams.</p>
+<p>Collectively, these metrics are useful for finding opportunities to improve internal processes, ensuring a sane work environment for your team members, and providing context and justification for increasing team resources.</p>
+<p>Note that these metrics are primarily focused on revenue generating contracts (e.g. new, upsell, negotiated renewals, etc) and not on ancillary docs like NDAs, amendments, etc. There are metrics that can be leveraged for those ancillary docs and there are also more generic, blended metrics like “average legal response to all requests combined”. Note also that the metrics here are focused on things like workload and velocity of deals as opposed to the substance of the deals themselves (although I’ve added a few of those at the bottom, without discussion).</p>
+<p>The metrics are:</p>
+<ul>
+<p><a href="#individual-metrics"><strong>Individual Metrics</strong></a></p>
+<ul>
+<li><a href="#workflows-active-last-30-days-per-person">Workflows Active Last 30 Days Per Person</a></li>
+<li><a href="#workflows-assigned-qtd-per-person">Workflows Assigned QTD Per Person</a></li>
+<li><a href="#time-off-over-rolling-6-month-period-per-person">Time Off Over Rolling 6-Month Period Per Person</a></li>
+</ul>
+<p><a href="#team-metrics"><strong>Team Metrics</strong></a></p>
+<ul>
+<li><a href="#ratio--negotiated-acv---legal-fte">Ratio $ Negotiated ACV : $ Legal FTE</a></li>
+<li><a href="#ratio--negotiated-acv---legal-fte-1">Ratio $ Negotiated ACV : # Legal FTE</a></li>
+<li><a href="#ratio--sales-fte---legal-fte">Ratio # Sales FTE : # Legal FTE</a></li>
+<li><a href="#ratio--arr-or-revenue---legal-fte">Ratio $ ARR (or Revenue) : # Legal FTE</a></li>
+<li><a href="#ratio--workflows---legal-fte">Ratio # Workflows : # Legal FTE</a></li>
+<li><a href="#ratio--negotiated-acv---workflow">Ratio $ Negotiated ACV : # Workflow</a></li>
+</ul>
+<p><a href="#deal-metrics"><strong>Deal Metrics</strong></a></p>
+<ul>
+<li><a href="#drafts-per-workflow">Drafts Per Workflow</a></li>
+<li><a href="#significant-drafts-per-workflow">Significant Drafts Per Workflow</a></li>
+<li><a href="#median--mean-days-between-drafts-per-workflow">Median / Mean Days Between Drafts Per Workflow</a></li>
+<li><a href="#time-between-first-and-last-negotiated-draft-per-workflow">Time Between First and Last Negotiated Draft Per Workflow</a></li>
+<li><a href="#time-attribution-to-internal-legal-internal-business-or-counterparty-per-workflow">Time Attribution to Internal Legal, Internal Business, or Counterparty Per Workflow</a></li>
+<li><a href="#number-of-drafts-versus-acv">Number of Drafts versus ACV</a></li>
+<li><a href="#time-attribution-to-internal-legal-internal-business-or-counterparty-per-workflow">Time between First and Last Draft versus ACV</a></li>
+</ul>
+<p><a href="#a-few-others"><strong>A Few Others</strong></a></p>
+</ul>
+<p>Actually getting the data and setting up the systems for measuring these metrics is surprisingly difficult. Things like deal size, headcount costs, and number of drafts per deal tend to live on separate systems owned by separate teams. And, in personal experience, pulling everything together ends up requiring a good amount of custom code and wrangling spreadsheets.</p>
+<p>Good benchmarking doesn’t seem to exist either. One reason may simply be the difficulty of actually getting the numbers. Another may be the specifics of each business. Things like average deal size, market segment, and buyer profile might all impact these metrics, which could make it difficult to compare across companies.</p>
+<p>Metrics get gamed. A few of the metrics here work together to disincentivize (or try to disincentivize) gaming. For instance, reducing the number of drafts that are generated per workflow might incentivize team members to hold onto drafts and not upload them into the workflow management system. The median days between drafts metric would hopefully counteract this by incentivizing the reduction of time between drafts.</p>
+<p>Moreover, it is useful to identify floors and ceilings to these metrics, beyond which it may be unreasonable or un-useful to find additional improvement. At that point in the team lifecycle, it might be time to find different metrics.</p>
+<p>Ultimately, the goal here is to find ways to improve the system, not to micromanage.</p>
+<p>As a side note, it is possible that some or none of these metrics work for you, your team, or your company. The hope is that taking a look at these inspires you to find something that works. Please share your favorite metrics with me so that I can learn too.</p>
+<h2 id="individual-metrics">Individual Metrics</h2>
+<ul>
+<li><a href="#workflows-active-last-30-days-per-person">Workflows Active Last 30 Days Per Person</a></li>
+<li><a href="#workflows-assigned-qtd-per-person">Workflows Assigned QTD Per Person</a></li>
+<li><a href="#time-off-over-rolling-6-month-period-per-person">Time Off Over Rolling 6-Month Period Per Person</a></li>
+</ul>
+<p>The goal of this set of metrics is to get an overall sense of work distribution among the team and permit for proactive allocation / reallocation of work.</p>
+<p>The inclusion of the “days off” metric is to ensure that team members are getting the breaks they deserve. It is a very common phenomena for lawyers, especially US-based lawyers, to take too little time off. This leads to burnout. Burnout is bad for humans. And burned out humans are bad for teams.</p>
+<p>The metrics here don’t account for how complex each workflow is or even what constitutes a “workflow”. Different types of workflows may have different complexity, and even the same type of workflow might have different complexity depending on certain factors. For example, a “sales workflow” that is redlines on your paper is likely to be less work than a “sales workflow” where the buyer has insisted on using their form MSA. And even when the workflow is premised on your paper, some regions are more likely to negotiate than others. In a perfect world, it would be possible and easy to weight the “workflow” value based on its complexity.</p>
+<p>Moreover, there might be a better unit of measurement than “workflow” for your org. Find whatever analog works best for you.</p>
+<p>A qualitative measure that can be used in connection with these quantitative measures is the some version of the question “how are you doing?” or “how are you feeling?” or “how is your workload?” or “how is your bandwidth?” Answers to this question can give some context for what the quantitative measures mean. If people feel maxed out at X metric, then that might be the safe ceiling for that metric.</p>
+<h3 id="workflows-active-last-30-days-per-person">Workflows Active Last 30 Days Per Person</h3>
+<p>This metric measures the number of workflows that have seen activity within the past thirty days that are assigned to an individual. This metric provides insight into workload distribution across the team.</p>
+<p>Not all workflows are active. Some workflows can be created, assigned, and then see no activity for a long period of time. What defines activity can be very broad, and I think that is generally appropriate. Context switching has a cost. A simple question could constitute activity for a workflow, as can a new set of redlines returned from the counterparty. And hopefully the overall activity type will even out over the entire set of active workflows so that it should be fairly comparable across people.</p>
+<p>This metric is likely a better indicator of actual current workload than the “Workflows Assigned QTD Per Person”, as this one measures activity. And a workflow that has been created and assigned to someone today will show up as both a “Workflow Assigned QTD” and “Workflow Active Last 30 Days”.</p>
+<p>In theory, one would expect that as teams and processes get more efficient, each person’s ability to process more workflows increases, and thus this metric should trend higher over time. Nonetheless, there’s almost certainly a ceiling to this metric: by definition, the number of hours in a day is limited.</p>
+<p>Moreover, it can be really hard to see a clean trend in the data, especially if you are at an early-stage, high-growth company in which deal volume is growing, head count is growing, and there isn’t a long history of steady state to compare to. In these situations, it’s very possible that the number will fluctuate if the window being observed is small enough. Nonetheless, there’s still a lot of value in ensuring that work is being evenly distributed. And when combined with qualitative discussions, the metric can be used to identify points where new resourcing is required.</p>
+<h3 id="workflows-assigned-qtd-per-person">Workflows Assigned QTD Per Person</h3>
+<p>This metric measures the number of workflows assigned to each team member during the current quarter, providing insight into distribution of new work across the team. It’s a good way to ensure that as “new things” come in, they are being allocated thoughtfully.</p>
+<p>If possible, it is probably even better to change this to “Workflows Assigned Last X (e.g. 60 or 90) Days Per Person”, this way the counter doesn’t reset to zero at the beginning of every quarter. A rolling period probably allows for better visibility into how new work is being assigned. Whether or not it is possible will depend on your tooling / reporting systems.</p>
+<p>Where “Workflows Active Last 30 Days” measures current activity, this metric can be used to ensure that there is a steady workflow for people in the future. Someone that has had nothing assigned to them recently might quickly see a steep drop off in things to do in the future.</p>
+<p>This metric is also a good way to ensure that new joiners are ramping up with a sufficient pipeline of work.</p>
+<h3 id="time-off-over-rolling-6-month-period-per-person">Time Off Over Rolling 6-Month Period Per Person</h3>
+<p>The goal here is to ensure that people are taking enough time off for themselves. Certainly not everyone has to take the exact same amount of time off. And some people might not want to take the time off. But it can be a useful signal to have conversations.</p>
+<h1 id="team-metrics">Team Metrics</h1>
+<ul>
+<li><a href="#ratio--negotiated-acv---legal-fte">Ratio $ Negotiated ACV : $ Legal FTE</a></li>
+<li><a href="#ratio--negotiated-acv---legal-fte-1">Ratio $ Negotiated ACV : # Legal FTE</a></li>
+<li><a href="#ratio--sales-fte---legal-fte">Ratio # Sales FTE : # Legal FTE</a></li>
+<li><a href="#ratio--arr-or-revenue---legal-fte">Ratio $ ARR (or Revenue) : # Legal FTE</a></li>
+<li><a href="#ratio--workflows---legal-fte">Ratio # Workflows : # Legal FTE</a></li>
+<li><a href="#ratio--negotiated-acv---workflow">Ratio $ Negotiated ACV : # Workflow</a></li>
+</ul>
+<p>These metrics provide insight into the overall efficiency and cost-effectiveness of the contracting team relative to revenue generated. They can be useful to assess whether process changes are having an effect on efficiency. They are also useful when projecting for future resource allocation: if the business is expected to grow by X, then the contracting function should grow by Y pursuant to these metrics.</p>
+<p>I tend to look at these on a quarterly basis and compare them quarter over quarter and year over year.</p>
+<p>“$ Negotiated ACV” refers to ACV that requires legal touch. ACV that is generated through a self-serve, click-through process would not be included here. Nor would ACV that closes through a process in which the buyer agrees to online terms without negotiating them. Similarly, a two year deal might count only the first year ACV into this number. Ultimately, the goal is to find a sensible way to capture the ACV that requires legal touch.</p>
+<p>“Legal FTE” should capture team members that work on negotiated ACV. This is fairly straightforward when everyone in the function works on deals. Where it can get complicated is when the org gets large enough to start including managers or other team members who might support the contracting team but not necessarily work on deals themselves. At that point there’s a question of who to include.</p>
+<p>One approach is to include managers when considering the “$ Legal FTE” but not when considering “# Legal FTE” (or only including a partial FTE for the manager). The rationale here may be that when assessing the cost impact of the function, it is important to include every person’s costs, but when assessing deal efficiency and workload on a headcount basis, it only makes sense to include that portion of time actually allocated to deals.</p>
+<p>“Workflows” should incorporate any workflows relating to negotiated ACV. It effectively maps to “what work is done by the legal team to support the sales team”. This could include workflows relating to redlines to template documents, customer MSAs, SOWs, etc. This could also include DPAs, referral agreements, RFP reviews, and amendments. Depending on circumstances, this could also include sole source letters and termination letters. It really depends on how the legal team is structured and how the sales team is structured.</p>
+<h3 id="ratio--negotiated-acv---legal-fte">Ratio $ Negotiated ACV : $ Legal FTE</h3>
+<p>This metric measures the relationship between the ACV of negotiated deals and the FTE costs of the team. At the end of the day, this is probably the only metric your CEO cares about. Drive this one up as high as possible.</p>
+<p>So many things impact this metric and benchmarks are really hard to find. In practice, the mostly valuable thing for this metric is likely to just find opportunities to create a positive trend.</p>
+<p>There are basically three buckets of things that impact this metric: deal context, deal efficiency, and team structure.</p>
+<p>First is what I think of as “deal context”. These are business circumstances that aren’t necessarily within the control of the legal team, but affect this metric.</p>
+<p>It’s frequently stated that a $20,000 deal that gets redlined is going to take about as much contracting effort as a $200,000 deal. And thus, simply increasing the average deal size should positively impact this metric (see discussion for Ratio $ Negotiated ACV : # Workflow below).</p>
+<p>As another example, upsells will generally be lower effort. If upsells count into the negotiated ACV bucket, more upsells will improve this ratio. As a side note though, buyers will not infrequently have deal size cutoffs under which a deal might not need any legal review (e.g. $20k). Once the relationship size increases above that threshold, however, significant legal review will be required. In those situations, upsells no longer improve the ratio.</p>
+<p>Other things like market segment, the champion’s leverage, product market fit, and region are all going to be out of the legal team’s control and still impact this ratio.</p>
+<p>The second bucket is deal efficiency: trying to make the processing of each $ ACV more efficient. This is where contracting processes, cross functional processes, training, etc come into play. And this is where the legal team has a lot more opportunity to influence outcomes. It’s also a good place to tie in OKRs.</p>
+<p>I’ve generally split this second bucket into two further subparts: a) the things that the legal team is responsible for doing that could be made more efficient and b) the things that the cross-functional teams input into the contracting process. In category ‘a’ are things like improving templates, improving talk tracks and drafting playbooks, and leveraging contracting management systems and legal tech. The strategy here is to constantly search for things that are repetitive in nature and find ways to make them more efficient.</p>
+<p>In category ‘b’ are things like signature processes, cross-functional deal approvals, AE training, one-pagers, enablement, enablement, and enablement. In high-growth businesses, the sales team is changing constantly. One should always find opportunities to maximize the likelihood of cross-functional team members getting to what they need or being directed to resources that will help them get to what they need, all without having to wait for a legal team member to respond.</p>
+<p>The last bucket is team structure: mechanisms to influence the legal FTE costs. It is common for the first legal FTE to be a lawyer. Perhaps the first few. You might also start with a commercial lawyer as the first hire in a new sales region. Over time the contracting process should get more standardized. And many of the complexities should get ironed out or written down in a playbook. Hiring should push towards more junior hires and non-attorney contract specialists. As the team and deal volume gets even larger, it should be possible to further specialize and pull categories of work into roles specifically hired for those tasks (e.g. administrative tasks all get centralized to a specific role). One can also consider hiring in lower cost regions, although time zones will be an eternal issue.</p>
+<p>It can be interesting to take this metric and compare it across your business verticals: on a region by region basis, e.g. AMER versus EMEA versus APAC, or segment by segment, e.g. GOV versus Mid-Market versus SMB. Seeing the data in this way might help identify region- / segment-specific issues that need addressing.</p>
+<h3 id="ratio--negotiated-acv---legal-fte-1">Ratio $ Negotiated ACV : # Legal FTE</h3>
+<p>This metric is similar in many ways to Ratio $ Negotiated ACV : $ Legal FTE, but it answers it from a per person basis. It makes it a lot easier to draw a line from the individuals who work on deals every day to the outcomes they are driving.</p>
+<p>The strategies to improve this metric are going to be the same as for the $:$ ratio. </p>
+<p>As with the $:$ ratio, it can be useful to compare this metric across verticals and regions. Regional differences in deal sizes are going to have a big impact on this number.</p>
+<p>There’s going to be a theoretical maximum number of deals per person. And as you grow and add people to the team who don’t necessarily work on deals, you might see a hit to this number. Although you would presume that adding those people would make the contracting process still more efficient such that the ratio can still trend in the positive direction.</p>
+<p>One benchmark I’ve seen for this ratio is $10M new and upsell / expand business per FTE. This version equates “new and upsell / expand” business to “negotiated ACV”, which may not be exactly true for your business. </p>
+<h3 id="ratio--sales-fte---legal-fte">Ratio # Sales FTE : # Legal FTE</h3>
+<p>Getting all the data required for “Ratio $ Negotiated ACV : $ Legal FTE” and “$ Negotiated ACV : # Legal FTE” can take a lot of work and requires some amount of organizational maturity. Early on, it is likely to be easier and more feasible to count people, hence the “# Sales FTE : # Legal FTE&quot; ratio. Even as the organization gets more mature, this metric is still useful to keep because it simply gives you a good pulse on how the org is changing. It can serve as an early signal that more legal resourcing is required. Tracking it alongside the other metrics may also be useful to identify other issues.</p>
+<p>When counting # of “sales” some weighting might be appropriate. You might, for instance, count sales managers as 0 because they don’t directly contribute negotiated ACV, count each AE as 1, and count each CSM as 0.3 because renewals are often not negotiated or very lightly negotiated. It might also be possible to rough out the ratio of $ negotiated ACV to # legal FTE by looking at what the quotas are for each sales person.</p>
+<p>One target ratio I’ve seen is 10:1. Although, just like the $ Negotiated ACV ratios, this is heavily influenced by the circumstances of your business. Interestingly (to me as a non-sales expert), a fairly standard AE quota is around $1M (standard, I think because of OTE targets and common ACV sizes), and this roughly matches to the $10M new and upsell / expand business per Legal FTE ratio above.</p>
+<h3 id="ratio--arr-or-revenue---legal-fte">Ratio $ ARR (or Revenue) : # Legal FTE</h3>
+<p>This metric measures the relationship between all revenue, not just negotiated, against the number of FTE. A ratio can also be made against the cost of the FTE instead of the number.</p>
+<p>This metric covers more than the Negotiated ACV metrics, as ARR includes all non-negotiated revenue as well. Optimizing this metric might present an opportunity to look for efficiencies that might not be directly associated with closing each deal.  </p>
+<p>One benchmark I’ve heard is $35M ARR per FTE. Although, to be honest, I have not experienced this benchmark myself, and I think the benchmark might be missing some nuance that the negotiated ACV metric tries to capture. Namely, the negotiated ACV metric trying to account for work that actually needs to be done and the ARR doesn’t. (Please correct me if I’m wrong, I’d like to understand this metric a bit more.) </p>
+<p>In theory, a company could have $35M in ARR forever and need very little legal input.</p>
+<p>For a company that is following the “triple, triple, double, double, double” year-over-year pathway and with most deals around $25-50k ACV, I think the metric works up to and including the second triple. After that, I’m just not sure how it would work unless deal sizes increased dramatically or the business had really strong NRR numbers and the expansions just didn’t need that much legal work.</p>
+<p>The “triple, triple, double, double, double” pathway means that a company gets to $2M of ARR and then, on a year-over-year basis, grows from $2M =&gt; $6M, $6M =&gt; $18M, $18 =&gt; $36M, $36M =&gt; $72M, and $72M =&gt; $144M. </p>
+<p>The jump from $6M to $18M can be accomplished with just one contracting resource. The number of ramped AEs it takes to hit this triple also seems to generally match the number target ratio of 10:1.</p>
+<p>The doubling from $18M to $36M seems like a real stretch to get done with just one contracting resource. The end of quarter rush would be extremely miserable for that person. Not to mention the volume of work would make taking vacation extremely difficult. It may be possible that this “one” FTE is actually divided between two people. In which case it may be that the two people are both focused on contracts during contracting-heavy seasons and thus able to output the work of more than one FTE during those periods and then less than one FTE on contracting during the early parts of a quarter. This would not be a bad way to structure the team.</p>
+<p>The amount of cross-sells / expansions likely also impacts this. If it is the case that cross-sells / expansions are a big contributor to the overall ARR, and those types of deals generally take less legal input, it could be possible that the $35M ARR per FTE ratio works. But at that point, it works because the pool of negotiated ACV (and adjacent work) is sufficiently small that it can be handled by one FTE. If anything, it may be possible that the $35M ARR per FTE ratio is more an indicator that if one FTE can’t handle $35M of ARR, the company might have an NRR issue. Alternatively, it might mean that if one FTE can’t handle $35M of ARR, the company might need to negotiate fewer deals and force a “take it or leave it” situation to buyers.</p>
+<h3 id="ratio--workflows---legal-fte">Ratio # Workflows : # Legal FTE</h3>
+<p>This metric tracks workload per person. This assumes that the definition of workflow does not change too significantly (e.g. not combining multiple workflows into one or splitting a workflow into multiple), otherwise it will be difficult to compare over time.</p>
+<p>It’s not immediately clear to me how this should track over time. I tend to use it as a signal of change so that I can figure out what has changed.</p>
+<p>On the one hand, getting more efficient over time would imply that each person should be able to cover more workflows over time (subject to a peak). On the other hand, if this ratio has increased, but not much else has changed, it’s a good opportunity to figure out why. Perhaps there’s a sudden increase in deal amendments that need to be reviewed or termination letters that need to be sent.</p>
+<h3 id="ratio--negotiated-acv---workflow">Ratio $ Negotiated ACV : # Workflow</h3>
+<p>This metric tries to get visibility into the relationship between $ and legal work volume.</p>
+<p>In theory, one would want this ratio to get higher over time as that would represent higher dollar values per unit work. It’s possible that $ : # of Drafts might work as well. It really depends on how work is best measured for you. Again, find what works best for you.</p>
+<p>It’s not clear how the legal team can impact this ratio. It’s most likely useful as a signal to be used for other things.</p>
+<p>One place this can be useful is to see whether deal sizes are changing. If the deal sizes are dropping, it’s likely going to take more work to support the same total amount of negotiated ACV and it’s going to impact the relevant staffing ratios.</p>
+<p>There can sometimes be a disconnect between what the sales team considers a “deal” and what the legal team considers a “deal”. Depending on how your sales team sets up opportunities, there might be multiple opportunities that all wrap up into one piece of legal paper. For example, one “deal” that tries to consolidate a purchase made by two separate business units at one company might be treated as two renewal opportunities, an upsell, and an expansion.</p>
+<h2 id="deal-metrics">Deal Metrics</h2>
+<ul>
+<li><a href="#drafts-per-workflow">Drafts Per Workflow</a></li>
+<li><a href="#significant-drafts-per-workflow">Significant Drafts Per Workflow</a></li>
+<li><a href="#median--mean-days-between-drafts-per-workflow">Median / Mean Days Between Drafts Per Workflow</a></li>
+<li><a href="#time-between-first-and-last-negotiated-draft-per-workflow">Time Between First and Last Negotiated Draft Per Workflow</a></li>
+<li><a href="#time-attribution-to-internal-legal-internal-business-or-counterparty-per-workflow">Time Attribution to Internal Legal, Internal Business, or Counterparty Per Workflow</a></li>
+<li><a href="#number-of-drafts-versus-acv">Number of Drafts versus ACV</a></li>
+<li><a href="#time-attribution-to-internal-legal-internal-business-or-counterparty-per-workflow">Time between First and Last Draft versus ACV</a></li>
+</ul>
+<p>A focus for these metrics is on the parts of the deal process that can be influenced by the legal team.</p>
+<p>For instance, it may not be too useful, from the legal team&#39;s perspective, to consider the time it takes to go from workflow launch to a signed deal. Very often the signature process is something that is influenced by the sales team and the counterparty, and it can be the case that the legal team has completed the final version of the document, and signature will take another two weeks because of a process issue on the counterparty side.</p>
+<h3 id="drafts-per-workflow">Drafts Per Workflow</h3>
+<p>How many drafts does it take to get to a signable version of the agreement? The theoretical minimum is one draft, e.g., the buyer signs the first draft provided by the seller. In practice, this is effectively impossible, if there’s a possibility that the buyer is going to accept the first draft as is, probably best to just have a click through or online terms and never have it show up as negotiated ACV.</p>
+<p>This number should generally trend down over time. Although, as noted above, the floor is likely going to be some number above 1.</p>
+<p>This metric is also an opportunity to ask the question “What is it exactly that we’re generating new versions for?</p>
+<p>To the extent that your workflows include commercial-related language, e.g. SKU-specific language and payment terms, an easy way to drive this number down is to ensure that the first draft is a commercially-accurate reflection of what the buyer is expecting. For example, if the buyer has already agreed to net 45 terms, and a quote has been approved for net 45 terms, the document should go out with net 45 terms.</p>
+<p>It might also be worth restructuring your documents so that things that are more commercially oriented, like payment terms, are kept in an entirely separate document. Although once these get negotiated, they might end up in front of the legal team anyway.</p>
+<p>Another way to minimize drafts is to provide extensive reasoning around proposed changes. It is very difficult to respond to redlines when there isn’t reasoning and so a common response to a set of changes that doesn’t include any reasoning is to decline the changes with a request that the other side explain. This effectively delays the entire process by at least one exchange of drafts. Make it team culture that all changes include a reason. A byproduct of this is that every good playbook should include not just acceptable contract language but an associated talk track / comment track.</p>
+<h3 id="significant-drafts-per-workflow">Significant Drafts Per Workflow</h3>
+<p>Not all changes to a document require the same amount of work. There are certain redlines that can be made in a ministerial fashion, and the main cost is the fixed cost of having to work on the draft at all. These types of changes include things like changes to the choice of law or changes, modifying the effective date, fixing a net payment date, etc.</p>
+<p>On the other hand, certain types of drafts require significantly more work, either due to the type of changes or volume of changes. These might include responding to line edits on a liability section and providing an explanatory note, fixing complex formatting, or responding to multiple pages of redlines. </p>
+<p>This metric measures the number of drafts in a workflow that are of the latter, “more work” type. </p>
+<p>It can be difficult to determine what constitutes “more work” or not. Roughly is probably good enough. </p>
+<p>One way of categorizing is by whether the version was generated by downloading and editing locally in a word processor (or in Google docs) or whether the version was generated by updating a form or edited in a CLM’s online editor. The distinction being that this metric is a proxy for “effort” and “difficulty” and changes that are in a word processor are likely those that require the features of a word processor. If not, editing in a more convenient, less robust online editor might evince a simpler set of changes and thus not a “more work” draft. To be honest, the main reason I went with this categorization method was that it was something my CLM was able to track. Even then, roughly was indeed good enough. I hope you find a better way. </p>
+<p>On an individual workflow basis, even if the total number of drafts in a workflow doesn’t change, you want to increase the drafts that are “less work” and decrease the “more work”. In practice, this means finding ways to increase the types of drafts that can be created using as much automation / clicking as possible. Things that are commonly negotiated should be copy and pastable or insertable into a draft via clicking buttons in an interface (instead of typing). Ideally, this metric trends down over time.</p>
+<p>Looking at the entire pool of workflows, the percentage of workflows that contain a “significant draft” should trend down over time and settle at some percentage. Hopefully most deals can close without needing any significant drafts.</p>
+<h3 id="median--mean-days-between-drafts-per-workflow">Median / Mean Days Between Drafts Per Workflow</h3>
+<p>How much time did it take between generating each draft of a document? In some situations (namely if you only generate one draft internally for each turn) this is effectively a turn tracker that tracks how long it takes each party to return a draft.  </p>
+<p>There are at least a few items that make this metric messy. For internal turns, multiple versions may be generated quickly. And so the amount of time between these drafts might be fairly low, e.g. on the order of hours. For counterparty turns, you have no control over how long the counterparty will take before returning their draft. And so the time between an internal draft and an external draft in response might be on the order of days.</p>
+<p>Having said that, I still like this metric because it does provide some sense of turnaround time. And it does give something to measure against in the hopes of reducing overall time between drafts. To the extent that this metric can be gamed by increasing the number of internal drafts and reducing the time between those drafts, that can hopefully be counteracted by making sure the Drafts Per Workflow metric is trending downwards.</p>
+<h3 id="time-between-first-and-last-negotiated-draft-per-workflow">Time Between First and Last Negotiated Draft Per Workflow</h3>
+<p>This metric measures how much time it takes to get from the first draft of the legal doc (usually equivalent to when sales requests for an editable MSA) to the last version of the doc (which is the signable document). As noted above, this is not the same as between when the initial sales request is made (which is approximately when the first version is generated) and when the deal is signed. </p>
+<p>I’ve found this one is mostly useful to separate deals into different time buckets. There end up being approximately four buckets: a) effectively zero time; b) 5-7 calendar days; c) 10-15 calendar days; d) 30+ days. Buckets “a” and “b” may be combined.</p>
+<p>The narrative looks something like this. There are some deals where there are effectively no redlines or redlines that can be exchanged and completed just on the papers without a call. For this bucket of deals there are likely some changes around choice of law, some questions around automatic renewal of the deal, maybe some marketing terms, etc. These deals often reach the final signable draft within 5-7 days.</p>
+<p>Then there are the deals that require much more extensive changes. There might be disagreements over the boiler plate and liability shifting sections. Or additional clarification around the DPA or insurance provisions. A call might be needed in order to explain some of the particulars of your product to a procurement team or legal team. As long as the buy side is engaged (i.e. fairly quick turnarounds and easy to schedule calls), these can get done fairly quickly. </p>
+<p>Finally, there are the deals where things just take a long time. Very often these include deals that occur on customer paper that are simply not built for purpose. And often include negotiations on provisions like data privacy where it can take a lot of internal escalations on both sides in order to get something done. </p>
+<p>Once you get a sense of how these deals bucket out (the days provided above might not match your particular business), it can be useful to use the data to help manage expectations. You can communicate with the sales team about the likelihood a given deal will finish within a period of time, e.g. “Deals that look like this usually take this long to finish . . . .” </p>
+<p>It can be hard to optimize this metric over the total blended median. Instead, I like to think about how we can get deals to move between the buckets. It might be possible to move a certain category of deals from bucket “c” to bucket “b” by providing your sales teams with agreed upon positions that are also best and final positions. It might be possible to narrow the time window for bucket “b” deals by looking for commonly-negotiated provisions that maybe aren’t that risky or valuable to your business and just removing those terms altogether.</p>
+<p>It might be possible to shift “d” deals to “c” by insisting on using your paper. Although I think that realistically things that are in the “d” bucket are likely to always be in the “d” bucket. They are there because the counterparty can be inflexible and there are always going to be counterparties that are like that.</p>
+<h3 id="time-attribution-to-internal-legal-internal-business-or-counterparty-per-workflow">Time Attribution to Internal Legal, Internal Business, or Counterparty Per Workflow</h3>
+<p>This metric tries to determine “who contributes what time to the legal process”. It is related to and possibly simply a more detailed view of the “Time Between First and Last Negotiated Draft Per Workflow” metric. It is also harder to set up and get data for, and I wouldn’t worry about it until setting up the prior metric first. It is measured by taking the total time to get from the first draft to the last, signable draft, and attributing portions of that time to who the deal was waiting on.</p>
+<p>This can first be divided into the “internal” versus “counterparty” bucket. You have little control over the counterparty bucket, thus much of the benefit and optimization is trying to figure out how much time of a total deal time is spent by your internal team. If your CLM has a “turn tracker” the data for this metric should be fairly easy to approximate.</p>
+<p>As your process gets more sophisticated, I find it valuable to try and further parse out who on the internal side is contributing what amount of time to the process. There are portions of the internal turn time that depend solely on legal but there are also portions of the internal time that are often tied to cross-functional approvals and reviews, e.g. business approvals for new commercials; security review on contractual language; insurance review; etc. </p>
+<p>It is possible that the best next optimization is not necessarily on things that legal has control over, but figuring out how to reduce time for parts of the “legal step” that are contributed by other internal teams. It may be that there is time lost in the interface step (e.g. X needs to tag Y for review) in which case one might look into ticketing. Or it might be that better playbooks might avoid a need to tag in internal teams altogether.</p>
+<h3 id="number-of-drafts-versus-acv">Number of Drafts versus ACV</h3>
+<p>This metric is used to see if there is any relationship between the number of drafts a deal requires and the ACV of the deal. A scatter plot is a useful visualization.</p>
+<p>I’m not sure what the relationship is supposed to be, and how it should change with increasing ACV. Intuitively, lower ACV deals should require fewer drafts than higher ACV deals. But it wouldn’t be surprising if $30k deals take approximately as many drafts as $60k deals. It also wouldn’t be surprising if $150k deals took approximately as many drafts as $300k deals. Where it would be helpful would be to see whether the $30k deals were often taking as many drafts as the $300k deals or if there was no relationship whatsoever between deal size and draft count. In those situations, it would be helpful to figure out why and perhaps instate rules / processes to drive down the amount of work for lower value deals. One possibility is to say “No negotiating for deals less than &lt;$X.”</p>
+<p>It might also be relevant to track “Significant Drafts” against ACV. Much of the same reasoning applies.</p>
+<h3 id="time-between-first-and-last-draft-versus-acv">Time between First and Last Draft versus ACV</h3>
+<p>This is similar to the Number of Drafts versus ACV metric, and tracks the same way intuitively. Lower ACV deals should take less time than higher ACV deals. Lower value deals might not trigger as much scrutiny from procurement teams or require fewer internal approvers. They can sometimes fit under the threshold for legal review altogether. Higher value deals might have more stakeholders that need to collectively agree.</p>
+<p>There might be less opportunity to optimize this metric as compared to the Number of Drafts versus ACV metric. Where the Drafts metric maps to the complexity in papering the deal, this Time metric maps, perhaps, to the complexity for everything that relates to closing the deal. For the items that are in the counterparty’s control, e.g. internal approvals, it is likely that you have little control over those.</p>
+<h2 id="a-few-others">A Few Others</h2>
+<p>Some other adjacent metrics that I can think of (and will add if you send them to me):</p>
+<ul>
+<li>Average time for legal to respond to each type of request; Average time for legal to respond to a request blended over all requests</li>
+<li>Ratio of our paper : our paper w/ minimal redlines : our paper w/ significant redlines : customer paper</li>
+<li>How often 2nd, 3rd, etc options are used and for what clauses</li>
+<li>Frequency of non-standard indemnities, LoL, insurance provisions as a measure of risk</li>
+<li>How many NDAs are negotiated versus not negotiated</li>
+</ul>
 	    
     </body>
     <script>
